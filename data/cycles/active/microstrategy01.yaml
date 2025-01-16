@@ -1,0 +1,33 @@
+name: MicroStrategy Dividends Hedged Options
+growth:
+  symbol: "MSTX"
+  units: 200
+  cost: 40.2
+dividend:
+  symbol: "MSTY"
+  units: 290
+  cost: 30.72
+option:
+  qty: 2
+  premium: 10.2612
+  premium_bonus: 1447.76
+  strike: 44.0
+  expiration: "2025-02-07"
+  dte: 27
+  iv: 171.8
+  greeks:
+    delta: 0.7169
+    gamma: 0.0137
+    theta: -0.1838
+    vega: 0.0438
+    rho: 0.0149
+cycle:
+  startDate: "2025-01-10"
+  stk_capped_price: 63.3
+  extra_div_qty: 120
+  extra_div_cost: 28.6499
+  extra_cash: 62.01
+  cash_balance: 81.34
+  extra_div_income: 462.0
+  outcome: null
+  transactions: []

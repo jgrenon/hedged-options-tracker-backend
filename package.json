@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "type": "module",
+  "main": "./src/main.js",
+  "scripts": {
+    "start": " bun src/main.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0",
+    "immer": "^10.1.1",
+    "js-yaml": "^4.1.0",
+    "lodash": "^4.17.21",
+    "luxon": "^3.5.0",
+    "minimist": "^1.2.8",
+    "nanoid": "^5.0.9",
+    "object-hash": "^3.0.0",
+    "prisma": "^6.2.1",
+    "rxmq": "^2.0.1",
+    "zustand": "^5.0.3"
+  }
+}
