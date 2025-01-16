@@ -17,6 +17,9 @@ export function riskCapital({ store }) {
           store.getState().updateStrategyMetrics(id, 'RISK_CAPITAL', riskCapital);
         }
       });
+    },
+    {
+      invalidate: ['$[*].growth.price', '$[*].dividend.price'],
     }
   );
 }

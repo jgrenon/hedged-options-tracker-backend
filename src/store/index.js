@@ -3,6 +3,8 @@ import { immer } from 'zustand/middleware/immer';
 import { subscribeWithSelector } from 'zustand/middleware';
 import { merge } from 'lodash';
 import { DateTime } from 'luxon';
+import objectHash from 'object-hash';
+import { JSONPath } from 'jsonpath-plus';
 
 export function storeFactory(path) {
   const store = createStore(
@@ -189,5 +191,26 @@ export function storeFactory(path) {
     )
   );
 
-  return store;
+  return {
+    subscribe(selector, observer, options = {}) {
+      if (options.invalidate) {
+        return store.subscribe(
+          selector,
+          function (state, prev) {
+            const prevValues = options.invalidate.map((ptr) => JSONPath(ptr, prev));
+            const invalidatedValues = options.invalidate.map((ptr) => JSONPath(ptr, state));
+            if (objectHash(invalidatedValues) !== objectHash(prevValues)) {
+              observer(state, prev);
+            }
+          },
+          { fireImmediately: options.fireImmediately }
+        );
+      } else {
+        return store.subscribe(selector, observer, { fireImmediately: options.fireImmediately });
+      }
+    },
+    getState(...args) {
+      return store.getState(...args);
+    },
+  };
 }

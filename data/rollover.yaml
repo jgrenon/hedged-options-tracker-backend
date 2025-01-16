@@ -1,7 +1,7 @@
 id: microstrategy01
 option:
-  price: 14.70
-  dte: 23
+  price: 14.50
+  dte: 22
   iv: 171.8
   delta: 0.7169
   gamma: 0.0137
@@ -9,8 +9,8 @@ option:
   vega: 0.0438
   rho: 0.0149
 rollover:
-  premium: 14.6
-  qty: 3
+  premium: 13.10
+  qty: 2
   bonus: 1442.76
-  strike: 49
+  strike: 50
   expiration: "2025-02-21"

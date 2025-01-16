@@ -2,7 +2,7 @@ name: MicroStrategy Dividends Hedged Options
 growth:
   symbol: "MSTX"
   units: 200
-  cost: 40.2
+  cost: 40.20
 dividend:
   symbol: "MSTY"
   units: 290
